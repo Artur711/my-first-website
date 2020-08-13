@@ -1,0 +1,60 @@
+#content {
+    background-color: DarkRed;
+    font-size: 30px;    
+    color: white;
+    border-style: solid;
+    border-color: navy;
+    padding: 30px 10px;
+    text-align: center;
+}
+
+#content2 {
+    display: flex;
+    margin: 30px;
+}
+
+header {
+    font-size: 45px;
+    padding: 45px;
+    text-align: center;
+    align-content: center;
+}
+
+body {
+    font-family: arial, "Time New Roman";
+    font-size: 20px;
+    background: white url(https://cdn.pixabay.com/photo/2020/07/23/17/54/mountain-5431950_960_720.png) repeat top right;
+    display: block;
+    margin: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: DarkRed;
+    color: white;
+}
+
+img {
+    border: 1px black solid;
+}
+
+
+li {
+    background-color: #fff;;
+}
+
+.itermMenu {
+    border-style: outset;
+    border-width: 3px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    margin-right: 750px;
+    margin-left: 750px;
+}
+
+.item {
+    justify-content: space-evenly;  
+    flex-grow: 4;
+    flex-basis: auto;
+}
