@@ -8,9 +8,16 @@
     text-align: center;
 }
 
-#content2 {
+#section {
     display: flex;
-    margin: 30px;
+    margin: 50px, 50px;
+}
+
+#section2 {
+    display: flex;
+    margin: 50px, 50px;
+    justify-content: center;
+    font-size: 35px;
 }
 
 header {
@@ -39,6 +46,22 @@ img {
     border: 1px black solid;
 }
 
+a: actove {
+    color: red;
+}
+
+a: hover {
+    text-decoration: none;
+    color: blue;
+}
+
+a: link {
+    color: blue;
+}
+
+a: visited {
+    color: purple;
+}
 
 li {
     background-color: #fff;;
@@ -51,10 +74,4 @@ li {
     border-right-width: 10px;
     margin-right: 750px;
     margin-left: 750px;
-}
-
-.item {
-    justify-content: space-evenly;  
-    flex-grow: 4;
-    flex-basis: auto;
 }
