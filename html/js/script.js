@@ -1,0 +1,145 @@
+const name = document.getElementById('name')
+const mail = document.getElementById('mail')
+const form = document.getElementById('form')
+const comments = document.getElementById('comments')
+const errorElement = document.getElementById('error')
+
+
+form.addEventListener('submit', (e) => {
+    let messages = checkName(name.value);
+
+    if (messages == null) {
+        messages = checkMail(mail.value);        
+    }
+
+    if (messages == null) {
+        messages = checkComments(comments.value);
+    }
+
+    if (messages == null) {
+        alert('Success! Your mail was sent.');
+    }
+    else if (messages.length > 0) {
+        alert(messages);
+        e.preventDefault();
+    }
+})
+
+function checkName(name) {
+    let messages;
+    let letters = /^[A-Za-z ]+$/;
+
+    if (name === 'Enter your name') {
+        messages = 'Name is required';
+    }
+    else if (name.length < 3) {
+        messages = 'Name must be longer than 2 characters';
+    }
+    else if (!name.match(letters)) {
+        messages = 'Please input alphabet characters only';
+    }
+    else if (whiteSpace(name)) {
+        messages = 'The name cannot contain only spaces';
+    }
+    
+    else if (!titleCase(name)) {
+        messages = 'Each word must start with a capital letter';
+    }
+    else if (name.length > 20) {
+        messages = "Name mustn't be longer than 20 characters";
+    }
+    return messages;
+} 
+
+function checkMail(mail) {
+    let messages;
+
+    if (mail === 'Give your email') {
+        messages = 'Mail is required';
+    }
+    else if (mail.length < 6) {
+        messages = 'Mail must be longer than 5 characters';
+    }
+    else if (mail.length > 30) {
+        messages = "Mail mustn't be longer than 30 characters";
+    }
+    else if (whiteSpace(mail)) {
+        messages = 'The mail connot contain only spaces';
+    }
+    else if (!mail.includes('@')) {
+        messages = 'Email must have @ sign';
+    }
+    else if (checkIfHaveScapces(mail)) {
+        messages = "Email mustn't have a spaces";
+    }
+    else if (!checkIfHaveTwoMembers(mail)) {
+        messages = "The mail cannot have more than one the @ sign";
+    }
+    else if (checkIfMonkeyIsBegginingOrEnd(mail)) {
+        messages = "The @ sign cannot be at the beginning or end the mail";
+    }
+
+    return messages;
+}
+
+function checkComments(comments) {
+    let messages;
+
+    if (comments === 'Your comments') {
+        messages = 'Comment is required';
+    }
+    else if (whiteSpace(comments)) {
+        messages = 'The comment connot contain only spaces';
+    }
+    else if (comments.length < 10) {
+        messages = 'Comment must be longer than 9 characters';
+    }
+    return messages;
+}
+
+function whiteSpace(str) {
+    return (!str.replace(/\s/g, '').length) ? true : false;
+}
+
+function titleCase(str) {
+    let splitStr = str.split(' ');
+    for (let i = 0; i < splitStr.length; i++) {
+        if (!(splitStr[i].charAt(0) == splitStr[i].charAt(0).toUpperCase()))  {
+            return false;
+        }     
+    }
+    return true; 
+}
+
+function checkIfHaveScapces(str) {
+    let splitStr = str.split(' ');
+    return splitStr.length > 1 ? true : false;
+}
+
+function checkIfHaveTwoMembers(str) {
+    let splitStr = str.split('@');
+    return splitStr.length == 2 ? true : false;
+}
+
+function checkIfMonkeyIsBegginingOrEnd(str) {
+    if (str.charAt(0) == '@') {
+        return true;
+    }
+    else if (str.charAt(str.length - 1) == '@') {
+        return true;
+    }
+    return false;
+}
+
+function checkIfBegginningvalues() {
+    if (name.value === 'Enter your name') {
+        return true;
+    }
+    else if (mail.value === 'Give your email') {
+        return true;
+    }
+    else if (comments.value === 'Your comments') {
+        return true;
+    }
+    return false;
+}

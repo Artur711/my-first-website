@@ -10,27 +10,32 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Artut Kubiak">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0m mininum-scale=1.0">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
+    <div id="error"></div>
+    <form id = "form">
+
     <div id="content">
     <h1 class="intro">Contact form</h1>
     </div>    
     
-    <div id="section">
+    <div id="section2">
     <table>
         <tr>
-            <td><p><input name="name" value="Enter your name"></p></td>
-            <td><p><input mail="mail" value="Give your email "></p></td>
+            <td><label for="name"></label><input id="name" name="name" type="text" value="Enter your name" required></td>
+            <td><label for="mail"></label><input id="mail" name="mail" type="text" value="Give your email" required></td>
         </tr>    
     </table>    
     </div>
 
     
-     <div id="section"<h2><strong><em>Comments: </em></strong></h2></div>
-     <div id="section"><p><textarea rows="10" cols="50" name="comments">Your comments</textarea></p></div>
+     <div id="section2"><h2><strong><em>Comment: </em></strong></h2></div>
+     <div id="section2"><label for="comments"></label><textarea rows="10" cols="50" id="comments" name="comments">Your comments</textarea></div>
 
-    <div id="section"><p><input type="submit"></p></div>
-   
+    <div id="section2"><p><input type="submit" ></p></div>
+
+    </form>
     <footer>
         <p>Author: Artur Kubiak</p>
         <p><a href="mailto:arturkubiak9@gmail.com">arturkubiak9@gmail.com</a></p>
