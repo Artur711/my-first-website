@@ -3,7 +3,7 @@ const mail = document.getElementById('mail')
 const form = document.getElementById('form')
 const comments = document.getElementById('comments')
 const errorElement = document.getElementById('error')
-
+const submit = document.getElementById('submit')
 
 form.addEventListener('submit', (e) => {
     let messages = checkName(name.value);
@@ -142,4 +142,36 @@ function checkIfBegginningvalues() {
         return true;
     }
     return false;
+}
+
+form.addEventListener('input', () => {
+    if (!checkIsEmpty()) {
+        submit.removeAttribute('disabled');
+    }
+    else {
+        submit.setAttribute('disabled', 'disabled');
+    }
+});
+
+function checkIsEmpty() {
+    let firstField = true;
+    let seconfField = true;
+    let thirdField = true;
+
+    if (name.value === 'Enter your name' || name.value == null || name.value == "") {
+        firstField = false;
+    }
+    if (mail.value === 'Give your email' || mail.value == null || mail.value == "") {
+        seconfField = false;
+    }
+    if (comments.value === 'Your comments' || comments.value == null || comments.value == "") {
+        thirdField = false;
+    }
+    
+    if (firstField && seconfField && thirdField) {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
