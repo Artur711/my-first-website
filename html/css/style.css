@@ -8,18 +8,6 @@
     text-align: center;
 }
 
-@keyframes slidein {
-    0% {
-      margin-left: 0%;
-    }
-    50% {
-      margin-left: 300px;
-    }
-    100% {
-      margin-left: 0%;
-    }
-  }
-
 #section {
     display: flex;
     margin: 50px, 50px;
@@ -58,20 +46,20 @@ img {
     border: 1px black solid;
 }
 
-a: actove {
+a:actove {
     color: red;
 }
 
-a: hover {
+a:hover {
     text-decoration: none;
     color: blue;
 }
 
-a: link {
+a:link {
     color: blue;
 }
 
-a: visited {
+a:visited {
     color: purple;
 }
 
